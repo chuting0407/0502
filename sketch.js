@@ -24,7 +24,7 @@ function draw() {
   push(); // 儲存當前繪圖狀態
   translate(width, 0); // 將原點移到畫布右上角
   scale(-1, 1); // 水平翻轉畫布
-  image(capture, x, y, capture.width, capture.height); // 在畫布中央顯示翻轉後的影像
+   //image(capture, x, y, capture.width, capture.height); // 在畫布中央顯示翻轉後的影像
   pop(); // 恢復繪圖狀態
 }
 
