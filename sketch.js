@@ -24,7 +24,7 @@ function draw() {
   push(); // 儲存當前繪圖狀態
   translate(width, 0); // 將原點移到畫布右上角
   scale(-1, 1); // 水平翻轉畫布
-   //image(capture, x, y, capture.width, capture.height); // 在畫布中央顯示翻轉後的影像
+  //image(capture, x, y, capture.width, capture.height); // 在畫布中央顯示翻轉後的影像
   pop(); // 恢復繪圖狀態
 }
 
@@ -40,9 +40,15 @@ function updateGraphics() {
   for (let i = 0; i < graphics.width; i += 20) {
     for (let j = 0; j < graphics.height; j += 20) {
       let col = capture.get(i, j); // 從 capture 中取得相對應位置的顏色
-      graphics.fill(col); // 設定圓形的顏色
-      graphics.noStroke(); // 移除圓形的邊框
-      graphics.ellipse(i + 10, j + 10, 15, 15); // 繪製寬高為 15 的圓形，置於單位中心
+
+      // 繪製方框
+      graphics.fill(col); // 設定方框顏色為 capture 的顏色
+      graphics.noStroke(); // 移除邊框
+      graphics.rect(i + 1, j + 1, 18, 18); // 繪製寬高為 18 的方框
+
+      // 繪製圓形
+      graphics.fill('#3a86ff'); // 設定圓形顏色為固定的藍色
+      graphics.ellipse(i + 10, j + 10, 5, 5); // 在方框中心繪製直徑為 5 的圓形
     }
   }
 }
