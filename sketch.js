@@ -18,8 +18,8 @@ function draw() {
   let x = (width - capture.width) / 2; // 計算影像的水平居中位置
   let y = (height - capture.height) / 2; // 計算影像的垂直居中位置
 
-  // 顯示圖形在視訊畫面的上方
-  image(graphics, x, y - capture.height / 2 - 10); // 將圖形顯示在視訊畫面上方，並留出 10px 的間距
+  // 顯示圖形在攝影機畫面的上方，並置中
+  image(graphics, x, y - capture.height - 10); // 將圖形顯示在攝影機畫面上方，並留出 10px 的間距
 
   push(); // 儲存當前繪圖狀態
   translate(width, 0); // 將原點移到畫布右上角
