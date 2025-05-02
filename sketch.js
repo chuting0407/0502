@@ -15,16 +15,16 @@ function setup() {
 
 function draw() {
   background('#fcd5ce'); // 確保背景顏色一致
-  let x = (width - capture.width) / 2; // 計算影像的水平居中位置
-  let y = (height - capture.height) / 2; // 計算影像的垂直居中位置
+  let x = (width - graphics.width) / 2; // 計算 graphics 的水平居中位置
+  let y = (height - graphics.height) / 2; // 計算 graphics 的垂直居中位置
 
-  // 顯示圖形在攝影機畫面的上方，並置中
-  image(graphics, x, y - capture.height - 10); // 將圖形顯示在攝影機畫面上方，並留出 10px 的間距
+  // 顯示 graphics 在視窗正中間
+  image(graphics, x, y); // 將 graphics 顯示在視窗正中間
 
   push(); // 儲存當前繪圖狀態
   translate(width, 0); // 將原點移到畫布右上角
   scale(-1, 1); // 水平翻轉畫布
-  //image(capture, x, y, capture.width, capture.height); // 在畫布中央顯示翻轉後的影像
+  image(capture, x, y, capture.width, capture.height); // 在畫布中央顯示翻轉後的影像
   pop(); // 恢復繪圖狀態
 }
 
